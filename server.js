@@ -12,7 +12,6 @@ import { json } from 'hono/json';
 const app = new Hono();
 
 const port = 5000;
-const ip = '192.168.100.12';
 
 app.use('/static/*', serveStatic({ root: './public' }));
 
@@ -308,5 +307,5 @@ app.post('/api/upload-profile-pic', isAuthenticated, upload.single('profilePic')
 });
 
 app.listen(port, () => {
-  console.log(`Server is running at http://${ip}:${port}`);
+  console.log(`Server is running at ${port}`);
 });
