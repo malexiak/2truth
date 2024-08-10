@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/admin/adminpanelStyle.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="sidebar">
+        <button class="close-button">×</button>
+        <ul>
+            <li><img src="/uploads/png/New Project.png" alt="logo"></li>
+            <li><a href="/">Home</a></li>
+            <% if (user.role === 'artist' || user.role === 'owner') { %>
+                <li><a id="dashboardLink" href="/artist/dashboard">Dashboard</a></li>
+            <% } %> 
+            <% if (user.role === 'owner') { %>
+                <li id="adminPanelLink"><a href="/dev/api/access/admin/ownerPanel">Owner Panel</a></li>
+            <% } %>
+            <li class="profile-link">
+                <a href="/profile">
+                    <img id="profileImage" src="<%= user.profilePicture %>" alt="Zdjęcie profilowe">
+                    <span class="nickname">Username</span>
+                </a>
+            </li>     
+        </ul>
+    </div>
+    
+    <button class="toggle-button">≡</button>
+    
+      <script src="/admin/admin.js"></script>
+</body>
+</html>

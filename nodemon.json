@@ -1,0 +1,6 @@
+{
+    "watch": ["public","register", "server.js"],
+    "ext": "js,html,css",
+    "ignore": ["node_modules"]
+  }
+  

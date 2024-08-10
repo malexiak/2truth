@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/profile/profileStyle.css">
+  <title>Mój profil</title>
+</head>
+<body>
+  <h1>Mój profil</h1>
+  
+  <div class="profile-pic">
+    <img id="profileImage" src="<%= user.profilePicture %>" alt="Zdjęcie profilowe">
+    <input type="file" id="profilePictureInput" name="profilePicture" accept="image/*" style="display: none;">
+    <div id="changePictureOverlay"><div id="changePictureOverlay">
+      <svg class="feather feather-upload" fill="" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"></path>
+      </svg>
+    </div>
+    </div>
+  </div>
+  
+  <p style="margin: 5px 0; line-height: 1.2;"><strong>Imię:</strong> <span id="firstName"><%= user.firstName %></span></p>
+  <p style="margin: 5px 0; line-height: 1.2;"><strong>Nazwisko:</strong> <span id="lastName"><%= user.lastName %></span></p>
+  <p style="margin: 5px 0; line-height: 1.2;"><strong>Email:</strong> <span id="email"><%= user.email %></span></p>
+  <p style="margin: 5px 0; line-height: 1.2;"><strong>Pseudonim:</strong> <span id="nickname"><%= user.nickname %></span></p>
+  <p style="margin: 5px 0; line-height: 1.2;"><strong>Rola:</strong> <span id="role"><%= user.role %></span></p>
+
+
+  <div id="message" style="color: red;"></div>
+
+  <div class="sidebar">
+    <button class="close-button">×</button>
+    <ul>
+      <li><img src="/uploads/png/New Project.png" alt="logo"></li>
+      <li><a href="/">Home</a></li>
+      <% if (user.role === 'artist' || user.role === 'owner') { %>
+      <li><a id="dashboardLink" href="/artist/dashboard">Dashboard</a></li>
+      <% } %> 
+      <% if (user.role === 'admin' || user.role === 'owner') { %>
+        <li id="adminPanelLink"><a href="/dev/api/access/admin/adminPanel">Admin Panel</a></li>
+      <% } %>
+      <% if (user.role === 'owner') { %>
+        <li id="ownerPanelLink"><a href="/dev/api/access/admin/ownerPanel">Owner Panel</a></li>
+      <% } %>     
+    </ul>
+  </div>
+
+  <button class="toggle-button">≡</button>
+
+  <button id="logoutButton">Wyloguj się</button>
+
+  <script src="/profile/profile.js"></script>
+</body>
+</html>

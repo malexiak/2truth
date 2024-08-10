@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rejestracja Użytkownika</title>
+  <link rel="stylesheet" href="/register/registerStyle.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Rejestracja</h2>
+    <form id="registrationForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" required>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" required>
+      </div>
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" required>
+      </div>
+      <div class="form-group">
+        <label for="nickname">Nickname</label>
+        <input type="text" id="nickname" required>
+      </div>
+      <div class="form-group">
+        <label for="birthdate">Birthdate</label>
+        <input type="date" id="birthdate" required>
+      </div>
+      <button type="submit">Zarejestruj się</button>
+      <p class="loginLink">Have an account? <a href="/login">login</a></p>
+    </form>
+    <p id="responseMessage" class="error-message"></p>
+  </div>
+  <script src="/register/register.js"></script>
+</body>
+</html>

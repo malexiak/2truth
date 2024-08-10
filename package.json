@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "connect-session-sequelize": "^7.1.7",
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "hono": "^4.5.4",
+    "hono-session": "^1.0.4",
+    "hono-sessions": "^0.5.8",
+    "joi": "^17.13.3",
+    "lowdb": "^7.0.1",
+    "multer": "^1.4.5-lts.1",
+    "path": "^0.12.7",
+    "sequelize": "^6.37.3",
+    "sqlite3": "^5.1.7",
+    "zod": "^3.23.8"
+  },
+  "scripts": {
+  "start": "node server.js"
+ }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/owner/ownerpanelStyle.css">
+  <title>Owner Panel</title>
+</head>
+<body>
+  <div class="sidebar">
+    <button class="close-button">×</button>
+    <ul>
+      <li><img src="/uploads/png/New Project.png" alt="logo"></li>
+      <li><a href="/">Home</a></li>
+      <% if (user.role === 'artist' || user.role === 'owner') { %>
+        <li><a id="dashboardLink" href="/artist/dashboard">Dashboard</a></li>
+        <% } %> 
+      <% if (user.role === 'admin' || user.role === 'owner') { %>
+        <li id="adminPanelLink"><a href="/dev/api/access/admin/adminPanel">Admin Panel</a></li>
+      <% } %>
+      <li class="profile-link">
+        <a href="/profile">
+            <img id="profileImage" src="<%= user.profilePicture %>" alt="Zdjęcie profilowe">
+            <span class="nickname">Username</span>
+        </a>
+      </li>     
+    </ul>
+  </div>
+
+  <button class="toggle-button">≡</button>
+
+  <div class="main-content">
+    <h1>Owner Panel</h1>
+    
+    <input type="text" id="searchInput" placeholder="Search..." />
+
+    <div id="usersContainer"></div>
+    
+    <div id="notification" class="notification"></div>
+    
+    <button id="saveButton">Save</button>
+  </div>
+
+  <script src="/owner/ownerpanel.js"></script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #131313, #000000);
+    color: #e0e0e5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.content {
+    padding: 20px;
+    position: relative;
+    border-radius: 15px;
+    animation: subtleFadeIn 5s ease-in-out forwards;
+}
+
+h1 {
+    font-size: 8rem;
+    margin-bottom: 15px;
+    color: #a29bfe;
+    text-shadow: 0 0 10px rgba(162, 155, 254, 0.6), 0 0 20px rgba(162, 155, 254, 0.4);
+    animation: softGlow 3s ease-in-out infinite alternate;
+}
+
+p {
+    font-size: 1.25rem;
+    margin-bottom: 25px;
+    color: #d1c4e9;
+    animation: fadeIn 3s ease-in-out;
+}
+
+a {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #a29bfe;
+    color: #121212;
+    text-decoration: none;
+    border-radius: 25px;
+    box-shadow: 0 2px 20px rgba(162, 155, 254, 0.527);
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    animation: pulseButton 3s infinite;
+}
+
+a:hover {
+    background-color: #6c5ce7;
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(108, 92, 231, 0.6);
+}
+
+h1#error404 {
+    position: absolute;
+    top: -270% !important;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20vw;
+    color: #e2d9f1;
+    text-shadow: 0 0 5px rgba(209, 196, 233, 0.253), 0 0 10px rgba(209, 196, 233, 0.4);
+    z-index: -1;
+}
+
+@keyframes subtleFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes softGlow {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(162, 155, 254, 0.384), 0 0 15px rgba(162, 155, 254, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 15px rgba(162, 155, 254, 0.432), 0 0 20px rgba(162, 155, 254, 0.7);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulseButton {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 6rem;
+    }
+
+    p {
+        font-size: 1.1rem;
+    }
+
+    a {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    h1#error404 {
+        font-size: 18vw;
+        top: 12%;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    a {
+        padding: 8px 18px;
+        font-size: 0.9rem;
+    }
+
+    h1#error404 {
+        font-size: 16vw;
+        top: 15%;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 4rem;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 0.875rem;
+        margin-bottom: 20px;
+    }
+
+    a {
+        padding: 8px 15px;
+        font-size: 0.875rem;
+    }
+
+    h1#error404 {
+        font-size: 14vw;
+        top: 20%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 3.5rem;
+        margin-bottom: 8px;
+    }
+
+    p {
+        font-size: 0.8rem;
+        margin-bottom: 15px;
+    }
+
+    a {
+        padding: 7px 12px;
+        font-size: 0.75rem;
+    }
+
+    h1#error404 {
+        font-size: 12vw;
+        top: 25%;
+    }
+}
