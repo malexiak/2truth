@@ -1,13 +1,13 @@
-import { Hono } from 'hono';
-import bcrypt from 'bcrypt';
-import Joi from 'joi';
-import { Sequelize, DataTypes } from 'sequelize';
-import path from 'path';
-import fs from 'fs';
-import multer from 'multer';
-import { serveStatic } from '@hono/node-server/serve-static';
-import session from 'hono-session';
-import { json } from 'hono/json';
+const { Hono } = require('hono');
+const bcrypt = require('bcrypt');
+const Joi = require('joi');
+const { Sequelize, DataTypes } = require('sequelize');
+const path = require('path');
+const fs = require('fs');
+const multer = require('multer');
+const { serveStatic } = require('@hono/node-server/serve-static');
+const session = require('hono-session');
+const { json } = require('hono/json');
 
 const app = new Hono();
 
